@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --font-family: "Ubuntu";
+
+  --main-color: #C40C0C;
+
+  --border-radius: 1.5rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  outline: none;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("img/unoLogo.jpg") no-repeat center center fixed;
+  /* filter: blur(10px); */
+  background-size: cover;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.6); /* Slightly transparent background */
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); /* Apply blur effect to the background */
+  overflow: hidden; /* Ensure container hides overflow */
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Allow vertical scrolling */
+  max-height: 70vh; /* Limit height to 70% of the viewport */
+}
+
+/* Custom scrollbar styling for webkit browsers */
+.menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+
+.menu {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color) rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1.5px solid var(--main-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: var(--main-color);
+}
+
+#celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#celebration h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#celebration p {
+  font-size: 24px;
+}
+
+.player-score {
+  margin: 5px 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Custom alert box */
+.custom-alert {
+  background: #ffcc00;
+  color: #000;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  max-width: 90%;
+  width: 300px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-alert button {
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.custom-alert button:hover {
+  background: #005377;
+}
+
+.custom-alert p {
+  font-weight: 700;
+  margin: 0;
+  font-size: 18px;
+}

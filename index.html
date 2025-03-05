@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNO ballar kuzatuvchisi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Menu -->
+      <div id="start-menu" class="menu">
+        <h1>UNO ballar kuzatuvchisi</h1>
+        <label for="num-players">O'yinchilar sonini kiriting:</label>
+        <input type="number" id="num-players" min="2" max="10" />
+        <button onclick="proceedToNames()">Keyingi</button>
+        <input
+          type="file"
+          id="file-input"
+          style="display: none"
+          accept=".json"
+          onchange="loadGame(event)"
+        />
+        <button onclick="document.getElementById('file-input').click()">
+          O'yinni yuklash
+        </button>
+      </div>
+
+      <!-- Name Entry Menu -->
+      <div id="name-menu" class="menu" style="display: none">
+        <h1>O'yinchi ismlarini kiriting</h1>
+        <div id="name-inputs"></div>
+        <button onclick="startGame()">O'yinni boshlash</button>
+      </div>
+
+      <!-- Game Menu -->
+      <div id="game-menu" class="menu" style="display: none">
+        <h1>UNO ballar kuzatuvchisi</h1>
+        <div id="player-inputs"></div>
+        <button onclick="calculatePoints()">Ballarini yangilash</button>
+        <button onclick="saveGame()">Oyinni saqlash</button>
+        <div id="player-scores"></div>
+      </div>
+    </div>
+    <div id="celebration" class="celebration" style="display: none">
+      <h2>🎉 Tabriklaymiz! 🎉</h2>
+      <p id="winner"></p>
+    </div>
+    <div id="overlay" class="overlay">
+      <div id="custom-alert" class="custom-alert">
+        <p id="alert-message"></p>
+        <button onclick="closeAlert()">Yopish</button>
+      </div>
+    </div>
+    <audio id="celebration-sound" src="Audio/crowd-cheering.mp3"></audio>
+  </body>
+</html>

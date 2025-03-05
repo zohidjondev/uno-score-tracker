@@ -1,0 +1,2 @@
+- make english version of this website
+- make custom alert function which says that your progress is not saved
